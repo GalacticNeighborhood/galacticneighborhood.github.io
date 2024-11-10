@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<style>
+  :root {
+    --color1: black;
+    --color2: white;
+    --color3: rgb(86, 17, 150);
+  }
+</style>
+
+
+<head>
+  <meta name="charset" content="UTF-8" />
+
+  <title>Galactic Neighborhood</title>
+
+  <meta name="keywords" content="TGN, Galactic Neighborhood, TTRPG, 
+    game system, sci-fi, science fiction, space, magic, aliens" />
+  <meta name="description" content="Free game system rules" />
+  <meta name="author" content="Heston Montagne" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<nav>
+    <button type="button" onclick="toggleSettings()" class="settingsButton">
+      <img src="../images/Options.png" alt="Options" style="width: 45px; height: 45px"> 
+    </button>
+    <div id="settings" class="settings" style="visibility: hidden;">
+        <button type="button" onclick="toggleLightMode()">Toggle Dark Mode</button>
+        <div>Option 2</div>
+        <div>Here: var(--color1);</div>
+    </div>
+    
+    <div class="nav-container">
+        <div style="flex: 1 0 10%; text-align: left; padding-left: 80px;">
+        <a class="topnav" href="file:///C:/Users/hesto/WebsiteThings/Galactic-Neighborhood/index.html">
+            Home</a>
+        </div>
+        <div style="flex: 1 0 20%;">
+        <a class="topnav" href="file:///C:/Users/hesto/WebsiteThings/Galactic-Neighborhood/Pages/how-to-play.html">
+            How to Play</a>
+        </div>
+        <div style="flex: 1 0 20%;">
+        <a class="topnav" href="file:///C:/Users/hesto/WebsiteThings/Galactic-Neighborhood/Pages/character-options.html">
+            Character Options</a>
+        </div>
+        <div style="flex: 1 0 20%;">
+        <a class="topnav" href="file:///C:/Users/hesto/WebsiteThings/Galactic-Neighborhood/Pages/equipment.html">
+            Equipment</a>
+        </div>
+        <div style="flex: 1 0 20%;">
+        <a class="topnav" href="file:///C:/Users/hesto/WebsiteThings/Galactic-Neighborhood/Pages/ancient-magic.html">
+            Ancient Magic</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+  <div>
+    <h1>Character Options</h1>
+    <p>Page Content</p>
+  </div>
+
+</div>
+
+
+<script>
+
+function toggleSettings() {
+    if (document.getElementById("settings").style.visibility == "hidden") {
+    document.getElementById("settings").style.visibility = "visible"; } 
+    else { 
+    document.getElementById("settings").style.visibility = "hidden"; }
+}
+</script>
+
+<noscript>Sorry, your browser doesn't support JavaScript!</noscript>
+
+</body>
+</html>

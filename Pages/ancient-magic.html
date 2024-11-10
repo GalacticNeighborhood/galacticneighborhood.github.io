@@ -27,37 +27,52 @@
 <body>
 
 <nav>
-    <button type="button" onclick="toggleSettings()" class="settingsButton">
-      <img src="../images/Options.png" alt="Options" style="width: 45px; height: 45px">
-    </button>
-    <div id="settings" class="settings" style="visibility: hidden;">
-        <button type="button" onclick="toggleLightMode()">Toggle Dark Mode</button>
-        <div>Option 2</div>
-        <div>Here: var(--color1);</div>
-    </div>
+  <button type="button" onclick="toggleDropdown('settings')" class="settingsButton">
+    <img src="../images/Options.png" alt="Options" style="width: 45px; height: 45px">
+  </button>
+  <div id="settings" class="settings" style="visibility: hidden;">
+    <button type="button" onclick="toggleLightMode()">Toggle Dark Mode</button>
+    <div>Option 2</div>
+    <div>Here: var(--color1);</div>
+  </div>
     
-    <div class="nav-container">
-        <div style="flex: 1 0 10%; text-align: left; padding-left: 80px;">
-        <a class="topnav" href="https://galacticneighborhood.github.io/index.html">
-            Home</a>
-        </div>
-        <div style="flex: 1 0 20%;">
-        <a class="topnav" href="https://galacticneighborhood.github.io/Pages/how-to-play.html">
-            How to Play</a>
-        </div>
-        <div style="flex: 1 0 20%;">
-        <a class="topnav" href="https://galacticneighborhood.github.io/Pages/character-options.html">
-            Character Options</a>
-        </div>
-        <div style="flex: 1 0 20%;">
-        <a class="topnav" href="https://galacticneighborhood.github.io/Pages/equipment.html">
-            Equipment</a>
-        </div>
-        <div style="flex: 1 0 20%;">
-        <a class="topnav" href="https://galacticneighborhood.github.io/Pages/ancient-magic.html">
-            Ancient Magic</a>
-        </div>
+  <div class="nav-container">
+    <div class="home">
+      <a class="homeLink" href="../index.html">Home</a>
     </div>
+
+    <button type="button" onclick="toggleDropdown('HTP')" class="dropdown">
+      <div>How to Play</div>
+    </button>
+    <div id="HTP" class="dropdownContent" style="visibility: hidden; left: 20%">
+      <a class="topnav" href="how-to-play.html">How To Play</a>
+      <div>Dice Sizes</div>
+    </div>
+
+    <button type="button" onclick="toggleDropdown('CO')" class="dropdown">
+      <div>Character Options</div>
+    </button>
+    <div id="CO" class="dropdownContent" style="visibility: hidden; left: 40%">
+      <a class="topnav" href="character-options.html">Character Options</a>
+      <div>Menu 1</div>
+    </div>
+
+    <button type="button" onclick="toggleDropdown('EQ')" class="dropdown">
+      <div>Equipment</div>
+    </button>
+    <div id="EQ" class="dropdownContent" style="visibility: hidden; left: 60%">
+      <a class="topnav" href="equipment.html">Equipment</a>
+      <div>Menu 1</div>
+    </div>
+
+    <button type="button" onclick="toggleDropdown('AM')" class="dropdown">
+      <div>Ancient Magic</div>
+    </button>
+    <div id="AM" class="dropdownContent" style="visibility: hidden; left: 80%">
+      <a class="topnav" href="ancient-magic.html">Ancient Magic</a>
+      <div>Menu 1</div>
+    </div>
+  </div>
 </nav>
 
 <div class="container">
@@ -79,11 +94,11 @@
 
 <script>
 
-function toggleSettings() {
-    if (document.getElementById("settings").style.visibility == "hidden") {
-    document.getElementById("settings").style.visibility = "visible"; } 
-    else { 
-    document.getElementById("settings").style.visibility = "hidden"; }
+function toggleDropdown(id) {
+  if (document.getElementById(id).style.visibility == "hidden") {
+    document.getElementById(id).style.visibility = "visible"; } 
+  else { 
+    document.getElementById(id).style.visibility = "hidden"; }
 }
 </script>
 

@@ -27,7 +27,7 @@
 <body>
 
 <nav>
-  <button type="button" onclick="toggleSettings()" class="settingsButton">
+  <button type="button" onclick="toggleDropdown('settings')" class="settingsButton">
     <img src="images/Options.png" alt="Options" style="width: 50px; height: 50px;"> 
   </button>
   <div id="settings" class="settings" style="visibility: hidden;">
@@ -101,14 +101,7 @@
 
 
 <script>
-function toggleSettings() {
-  const settings = document.getElementById("settings");
 
-  if (settings.style.visibility == "hidden") {
-    settings.style.visibility = "visible"; } 
-  else { 
-    settings.style.visibility = "hidden"; }
-}
 function toggleDropdown(id) {
   if (document.getElementById(id).style.visibility == "hidden") {
     document.getElementById(id).style.visibility = "visible"; } 

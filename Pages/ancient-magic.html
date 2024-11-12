@@ -1,13 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<style>
-  :root {
-    --color1: black;
-    --color2: white;
-    --color3: rgb(86, 17, 150);
-  }
-</style>
-
 
 <head>
   <meta name="charset" content="UTF-8" />
@@ -26,20 +18,18 @@
 
 <body>
 
-<nav>
-  <button type="button" onclick="toggleDropdown('settings')" class="settingsButton">
-    <img src="../images/Options.png" alt="Options" style="width: 45px; height: 45px">
-  </button>
-  <div id="settings" class="settings" style="visibility: hidden;">
-    <button type="button" onclick="toggleLightMode()">Toggle Dark Mode</button>
-    <div>Option 2</div>
-    <div>Here: var(--color1);</div>
-  </div>
-    
+<nav>    
   <div class="nav-container">
-    <div class="home">
-      <a class="homeLink" href="../index.html">Home</a>
+    
+    <button type="button" onclick="toggleDropdown('settings')" class="settingsButton">
+      <img src="../images/Options.png" alt="Options" style="width: 45px; height: 45px;"> 
+    </button>
+    <div id="settings" class="settings" style="visibility: hidden;">
+      <div><a class="homeLink" href="about.html">About</a></div>
+      <a class="homeLink" href="../1.02 The Galactic Neighborhood.pdf">Rules PDF</a>
     </div>
+
+    <a class="home homeLink" href="../index.html">Home</a>
 
     <button type="button" onclick="toggleDropdown('HTP')" class="dropdown">
       <div>How to Play</div>
@@ -95,11 +85,17 @@
 <script>
 
 function toggleDropdown(id) {
-  if (document.getElementById(id).style.visibility == "hidden") {
-    document.getElementById(id).style.visibility = "visible"; } 
-  else { 
-    document.getElementById(id).style.visibility = "hidden"; }
+  var hidden = document.getElementById(id).style.visibility == "hidden";
+
+  document.getElementById('settings').style.visibility = "hidden";
+  document.getElementById('HTP').style.visibility = "hidden";
+  document.getElementById('CO').style.visibility = "hidden";
+  document.getElementById('EQ').style.visibility = "hidden";
+  document.getElementById('AM').style.visibility = "hidden";
+
+  if (hidden) document.getElementById(id).style.visibility = "visible";
 }
+
 </script>
 
 <noscript>Sorry, your browser doesn't support JavaScript!</noscript>

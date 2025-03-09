@@ -31,7 +31,7 @@
       <a class="homeLink" href="1.02 The Galactic Neighborhood.pdf">Rules PDF</a>
     </div>
 
-    <a class="home homeLink" href="index.html">Home</a>
+    <a class="home homeLink" href="#" onclick="loadContent('home')">Home</a>
 
     <button type="button" onclick="toggleDropdown('HTP')" class="dropdown">
       <div>How to Play</div>
@@ -230,6 +230,21 @@ function loadContent(page) {
       document.getElementById('Content-container').innerHTML = htmlContent;
     })
     .catch(error => console.error('Error loading rules:', error));
+
+    applyTooltips();
+  }
+
+function applyTooltips() {
+  const links = document.querySelectorAll('#content a');
+
+  links.forEach(link => {
+    // Extract the filename (e.g., 'usage.md' -> 'usage')
+    const fileName = link.href.split('/').pop().replace('.md', '');
+
+    if (tooltips[fileName]) {
+      link.title = tooltips[fileName];
+    }
+  });
 }
 
 // Automatically load home page content when the page loads

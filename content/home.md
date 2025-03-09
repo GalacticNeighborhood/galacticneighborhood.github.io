@@ -1,3 +1,7 @@
+---
+tooltip: "Home: Welcome to the Galaxy"
+---
+
 # The Galactic Neighborhood
 
 Welcome to the website for TGN.  

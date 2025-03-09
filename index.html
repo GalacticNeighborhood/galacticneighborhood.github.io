@@ -250,7 +250,7 @@ function loadContent(page) {
   fetch(`content/${page}.md`)
     .then(response => response.text())
     .then(markdown => {
-      const htmlContent = marked(markdown);
+      const htmlContent = marked.parse(markdown);
       document.getElementById('Content-container').innerHTML = htmlContent;
     })
     .catch(error => console.error('Error loading rules:', error));

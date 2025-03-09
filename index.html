@@ -14,6 +14,8 @@
 
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="stylesheet" href="styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -205,6 +207,12 @@
   </div>
 </div>
 
+<a href="#" onclick="loadContent('testSet')">Click to get test markdown content.</a>
+
+<div class="container" id="Content-container">
+
+</div>
+
 
 <script>
 
@@ -236,6 +244,16 @@ function toggleLightMode () {
     --font1 == "000000";
     --font2 == "FFFFFF";
   }
+}
+
+function loadContent(page) {
+  fetch(`content/${page}.md`)
+    .then(response => response.text())
+    .then(markdown => {
+      const htmlContent = marked(markdown);
+      document.getElementById('Content-container').innerHTML = htmlContent;
+    })
+    .catch(error => console.error('Error loading rules:', error));
 }
 </script>
 

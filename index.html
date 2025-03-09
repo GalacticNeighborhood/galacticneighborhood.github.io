@@ -244,6 +244,12 @@ function applyTooltips() {
     if (tooltips[fileName]) {
       link.title = tooltips[fileName];
     }
+
+    // Prevent default navigation to md files
+    link.addEventListener('click', function(event) {
+    event.preventDefault();
+    loadContent(fileName);
+    });
   });
 }
 

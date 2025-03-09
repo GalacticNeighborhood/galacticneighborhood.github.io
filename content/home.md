@@ -5,7 +5,7 @@ tooltip: "Home: Welcome to the Galaxy"
 # The Galactic Neighborhood
 
 Welcome to the website for TGN.  
-This website is meant to be usable instead of the [pdf version][1] of the rules guide.
+This website is meant to be usable instead of the [pdf version][1] of the rules guide. Learn more on the <a href="#" onclick="loadContent('about')">about & credits</a> page.
 
 ## Welcome to the Galaxy
 

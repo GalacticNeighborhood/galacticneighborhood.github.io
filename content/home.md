@@ -1,11 +1,7 @@
----
-tooltip: "Home: Welcome to the Galaxy"
----
-
 # The Galactic Neighborhood
 
 Welcome to the website for TGN.  
-This website is meant to be usable instead of the [pdf version][1] of the rules guide. Learn more on the [about page][2].
+This website is meant to be usable instead of the [pdf version][1] of the rules guide.
 
 ## Welcome to the Galaxy
 
@@ -26,4 +22,3 @@ The galaxy still isn't completely connected. Communication is limited to what tr
 Few people ever venture out of their galactic neighborhood into the unknown, but those that do can find all manner of new life, sights, and dangers. For heroes, scoundrels, and all other galactic travelers, the stars are just the next step in the adventure of a lifetime.
 
 [1]: <1.02 The Galactic Neighborhood.pdf>
-[2]: <about>

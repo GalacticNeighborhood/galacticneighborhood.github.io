@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="styles.css">
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
 </head>
 
 <body>
@@ -239,18 +241,40 @@ function applyTooltips() {
 
   links.forEach(link => {
     // Extract the filename (e.g., 'usage.md' -> 'usage')
-    const fileName = link.href.split('/').pop().replace('.md', '');
-
-    if (tooltips[fileName]) {
-      link.title = tooltips[fileName];
+    const fileName = link.getAttribute('data-file');
+    if (fileName) {
+      const toolTip = getTooltipFromMD(fileName);
+      if (toolTip) {  // Apply a tooltip if it exists
+        link.title = toolTip;
+      }
     }
 
     // Prevent default navigation to md files
     link.addEventListener('click', function(event) {
-    event.preventDefault();
-    loadContent(fileName);
+      event.preventDefault();
+      loadContent(fileName);
     });
   });
+}
+
+function getTooltipFromMD(fileName) {
+  fetch(`content/${fileName}.md`)
+    .then(response => response.text()) // Get the file content as text
+    .then(markdownText => {
+      const frontMatterMatch = markdownText.match(/^---\n([\s\S]+?)\n---/); // Regex to extract YAML front matter
+      if (frontMatterMatch) {
+        const frontMatter = frontMatterMatch[1]; // Extracted front matter text
+        try {
+          // Parse YAML front matter using js-yaml and return the tooltip
+          return jsyaml.load(frontMatter).tooltip;
+        } catch (e) {
+          console.error('Error parsing YAML front matter:', e);
+        }
+      } else {
+        console.log('No front matter found in the file.');
+      }
+    })
+    .catch(error => console.error('Error fetching file:', error));
 }
 
 // Automatically load home page content when the page loads
